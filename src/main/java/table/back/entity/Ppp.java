@@ -1,8 +1,8 @@
 package table.back.entity;
 
 import jakarta.persistence.*;
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "ppp") 
@@ -38,6 +38,27 @@ public class Ppp {
 
     @Column(name = "option_norm_7")
     private Long optionNorm7;
+    
+    @Column(name = "operation_norm_1")
+    private Long operationNorm1;
+
+    @Column(name = "operation_norm_2")
+    private Long operationNorm2;
+
+    @Column(name = "operation_norm_3")
+    private Long operationNorm3;
+
+    @Column(name = "operation_norm_4")
+    private Long operationNorm4;
+
+    @Column(name = "operation_norm_5")
+    private Long operationNorm5;
+
+    @Column(name = "operation_norm_6")
+    private Long operationNorm6;
+
+    @Column(name = "operation_norm_7")
+    private Long operationNorm7;
 
     @Column(name = "problem_time_1")
     private Long problemTime1;
@@ -61,73 +82,318 @@ public class Ppp {
     private Long problemTime7;
 
     @Column(name = "start_time_ppp_1")
-    private Timestamp startTimePpp1;
+    private LocalDateTime startTimePpp1;
 
     @Column(name = "start_time_ppp_2")
-    private Timestamp startTimePpp2;
+    private LocalDateTime startTimePpp2;
 
     @Column(name = "start_time_ppp_3")
-    private Timestamp startTimePpp3;
+    private LocalDateTime startTimePpp3;
 
     @Column(name = "start_time_ppp_4")
-    private Timestamp startTimePpp4;
+    private LocalDateTime startTimePpp4;
 
     @Column(name = "start_time_ppp_5")
-    private Timestamp startTimePpp5;
+    private LocalDateTime startTimePpp5;
 
     @Column(name = "start_time_ppp_6")
-    private Timestamp startTimePpp6;
+    private LocalDateTime startTimePpp6;
 
     @Column(name = "start_time_ppp_7")
-    private Timestamp startTimePpp7;
+    private LocalDateTime startTimePpp7;
 
     @Column(name = "plan_data_start")
-    private Date planDataStart1C;
+    private LocalDate planDataStart1C;
 
     @Column(name = "forecast_data_start")
-    private Date forecastDataStart1C;
+    private LocalDate forecastDataStart1C;
 
     @Column(name = "fact_data_start")
-    private Date factDataStart1C;
+    private LocalDate factDataStart1C;
 
     @Column(name = "stop_time_ppp_1")
-    private Timestamp stopTimePpp1;
+    private LocalDateTime stopTimePpp1;
 
     @Column(name = "stop_time_ppp_2")
-    private Timestamp stopTimePpp2;
+    private LocalDateTime stopTimePpp2;
 
     @Column(name = "stop_time_ppp_3")
-    private Timestamp stopTimePpp3;
+    private LocalDateTime stopTimePpp3;
 
     @Column(name = "stop_time_ppp_4")
-    private Timestamp stopTimePpp4;
+    private LocalDateTime stopTimePpp4;
 
     @Column(name = "stop_time_ppp_5")
-    private Timestamp stopTimePpp5;
+    private LocalDateTime stopTimePpp5;
 
     @Column(name = "stop_time_ppp_6")
-    private Timestamp stopTimePpp6;
+    private LocalDateTime stopTimePpp6;
 
     @Column(name = "stop_time_ppp_7")
-    private Timestamp stopTimePpp7;
+    private LocalDateTime stopTimePpp7;
 
     @Column(name = "plan_data_stop")
-    private Date planDataStop1C;
+    private LocalDate planDataStop1C;
 
     @Column(name = "forecast_data_stop")
-    private Date forecastDataStop1C;
+    private LocalDate forecastDataStop1C;
 
     @Column(name = "fact_data_stop")
-    private Date factDataStop1C;
+    private LocalDate factDataStop1C;
 
     @Column(name = "plan_data_shipment")
-    private Date planDataShipment1C;
+    private LocalDate planDataShipment1C;
 
     @Column(name = "forecast_data_shipment")
-    private Date forecastDataShipment1C;
+    private LocalDate forecastDataShipment1C;
 
     @Column(name = "fact_data_shipment")
-    private Date factDataShipment1C;
+    private LocalDate factDataShipment1C;
+
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart1;
+
+    public LocalDate getPlanDataStart1() {
+        return planDataStart1;
+    }
+
+    public void setPlanDataStart1(LocalDate planDataStart1) {
+        this.planDataStart1 = planDataStart1;
+    }
+
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart2;
+
+    public LocalDate getPlanDataStart2() {
+        return planDataStart2;
+    }
+
+    public void setPlanDataStart2(LocalDate planDataStart2) {
+        this.planDataStart2 = planDataStart2;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart3;
+
+    public LocalDate getPlanDataStart3() {
+        return planDataStart3;
+    }
+
+    public void setPlanDataStart3(LocalDate planDataStart3) {
+        this.planDataStart3 = planDataStart3;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart4;
+
+    public LocalDate getPlanDataStart4() {
+        return planDataStart4;
+    }
+
+    public void setPlanDataStart4(LocalDate planDataStart4) {
+        this.planDataStart4 = planDataStart4;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart5;
+
+    public LocalDate getPlanDataStart5() {
+        return planDataStart5;
+    }
+
+    public void setPlanDataStart5(LocalDate planDataStart5) {
+        this.planDataStart5 = planDataStart5;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart6;
+
+    public LocalDate getPlanDataStart6() {
+        return planDataStart6;
+    }
+
+    public void setPlanDataStart6(LocalDate planDataStart6) {
+        this.planDataStart6 = planDataStart6;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart7;
+
+    public LocalDate getPlanDataStart7() {
+        return planDataStart7;
+    }
+
+    public void setPlanDataStart7(LocalDate planDataStart7) {
+        this.planDataStart7 = planDataStart7;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate planDataStart8;
+
+    public LocalDate getPlanDataStart8() {
+        return planDataStart8;
+    }
+
+    public void setPlanDataStart8(LocalDate planDataStart8) {
+        this.planDataStart8 = planDataStart8;
+    }
+
+
+
+
+    
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart1;
+
+    public LocalDate getForecastDataStart1() {
+        return forecastDataStart1;
+    }
+    
+    public void setForecastDataStart1(LocalDate forecastDataStart1) {
+        this.forecastDataStart1 = forecastDataStart1;
+    }
+
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart2;
+
+    public LocalDate getForecastDataStart2() {
+        return forecastDataStart2;
+    }
+
+    public void setForecastDataStart2(LocalDate forecastDataStart2) {
+        this.forecastDataStart2 = forecastDataStart2;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart3;
+
+    public LocalDate getForecastDataStart3() {
+        return forecastDataStart3;
+    }
+
+    public void setForecastDataStart3(LocalDate forecastDataStart3) {
+        this.forecastDataStart3 = forecastDataStart3;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart4;
+
+    public LocalDate getForecastDataStart4() {
+        return forecastDataStart4;
+    }
+
+    public void setForecastDataStart4(LocalDate forecastDataStart4) {
+        this.forecastDataStart4 = forecastDataStart4;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart5;
+
+    public LocalDate getForecastDataStart5() {
+        return forecastDataStart5;
+    }
+
+    public void setForecastDataStart5(LocalDate forecastDataStart5) {
+        this.forecastDataStart5 = forecastDataStart5;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart6;
+
+    public LocalDate getForecastDataStart6() {
+        return forecastDataStart6;
+    }
+
+    public void setForecastDataStart6(LocalDate forecastDataStart6) {
+        this.forecastDataStart6 = forecastDataStart6;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart7;
+
+    public LocalDate getForecastDataStart7() {
+        return forecastDataStart7;
+    }
+
+    public void setForecastDataStart7(LocalDate forecastDataStart7) {
+        this.forecastDataStart7 = planDataStart7;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private LocalDate forecastDataStart8;
+
+    public LocalDate getForecastDataStart8() {
+        return forecastDataStart8;
+    }
+
+    public void setForecastDataStart8(LocalDate forecastDataStart8) {
+        this.forecastDataStart8 = planDataStart8;
+    }
+
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTime1;
+
+    public Long getOperationTime1() {
+        return operationTime1;
+    }
+
+    public void setOperationTime1(Long operationTime1) {
+        this.operationTime1 = operationTime1;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTime2;
+
+    public Long getOperationTime2() {
+        return operationTime2;
+    }
+
+    public void setOperationTime2(Long operationTime2) {
+        this.operationTime2 = operationTime2;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTime3;
+
+    public Long getOperationTime3() {
+        return operationTime3;
+    }
+
+    public void setOperationTime3(Long operationTime3) {
+        this.operationTime3 = operationTime3;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTime4;
+
+    public Long getOperationTime4() {
+        return operationTime4;
+    }
+
+    public void setOperationTime4(Long operationTime4) {
+        this.operationTime4 = operationTime4;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTime5;
+
+    public Long getOperationTime5() {
+        return operationTime5;
+    }
+
+    public void setOperationTime5(Long operationTime5) {
+        this.operationTime5 = operationTime5;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTime6;
+
+    public Long getOperationTime6() {
+        return operationTime6;
+    }
+
+    public void setOperationTime6(Long operationTime6) {
+        this.operationTime6 = operationTime6;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTime7;
+
+    public Long getOperationTime7() {
+        return operationTime7;
+    }
+
+    public void setOperationTime7(Long operationTime7) {
+        this.operationTime7 = operationTime7;
+    }
+
+
+
+
+
+
 
     public String getTransaction() {
         return transaction;
@@ -207,6 +473,61 @@ public class Ppp {
     public void setOptionNorm7(Long optionNorm7) {
         this.optionNorm7 = optionNorm7;
     }
+    public Long getOperationNorm1() {
+        return operationNorm1;
+    }
+
+    public void setOperationNorm1(Long operationNorm1) {
+        this.operationNorm1 = operationNorm1;
+    }
+
+    public Long getOperationNorm2() {
+        return operationNorm2;
+    }
+
+    public void setOperationNorm2(Long operationNorm2) {
+        this.operationNorm2 = operationNorm2;
+    }
+
+    public Long getOperationNorm3() {
+        return operationNorm3;
+    }
+
+    public void setOperationNorm3(Long operationNorm3) {
+        this.operationNorm3 = operationNorm3;
+    }
+
+    public Long getOperationNorm4() {
+        return operationNorm4;
+    }
+
+    public void setOperationNorm4(Long operationNorm4) {
+        this.operationNorm4 = operationNorm4;
+    }
+
+    public Long getOperationNorm5() {
+        return operationNorm5;
+    }
+
+    public void setOperationNorm5(Long operationNorm5) {
+        this.operationNorm5 = operationNorm5;
+    }
+
+    public Long getOperationNorm6() {
+        return operationNorm6;
+    }
+
+    public void setOperationNorm6(Long operationNorm6) {
+        this.operationNorm6 = operationNorm6;
+    }
+
+    public Long getOperationNorm7() {
+        return operationNorm7;
+    }
+
+    public void setOperationNorm7(Long operationNorm7) {
+        this.operationNorm7 = operationNorm7;
+    }
 
     public Long getProblemTime1() {
         return problemTime1;
@@ -264,187 +585,187 @@ public class Ppp {
         this.problemTime7 = problemTime7;
     }
 
-    public Timestamp getStartTimePpp1() {
+    public LocalDateTime getStartTimePpp1() {
         return startTimePpp1;
     }
 
-    public void setStartTimePpp1(Timestamp startTimePpp1) {
+    public void setStartTimePpp1(LocalDateTime startTimePpp1) {
         this.startTimePpp1 = startTimePpp1;
     }
 
-    public Timestamp getStartTimePpp2() {
+    public LocalDateTime getStartTimePpp2() {
         return startTimePpp2;
     }
 
-    public void setStartTimePpp2(Timestamp startTimePpp2) {
+    public void setStartTimePpp2(LocalDateTime startTimePpp2) {
         this.startTimePpp2 = startTimePpp2;
     }
 
-    public Timestamp getStartTimePpp3() {
+    public LocalDateTime getStartTimePpp3() {
         return startTimePpp3;
     }
 
-    public void setStartTimePpp3(Timestamp startTimePpp3) {
+    public void setStartTimePpp3(LocalDateTime startTimePpp3) {
         this.startTimePpp3 = startTimePpp3;
     }
 
-    public Timestamp getStartTimePpp4() {
+    public LocalDateTime getStartTimePpp4() {
         return startTimePpp4;
     }
 
-    public void setStartTimePpp4(Timestamp startTimePpp4) {
+    public void setStartTimePpp4(LocalDateTime startTimePpp4) {
         this.startTimePpp4 = startTimePpp4;
     }
 
-    public Timestamp getStartTimePpp5() {
+    public LocalDateTime getStartTimePpp5() {
         return startTimePpp5;
     }
 
-    public void setStartTimePpp5(Timestamp startTimePpp5) {
+    public void setStartTimePpp5(LocalDateTime startTimePpp5) {
         this.startTimePpp5 = startTimePpp5;
     }
 
-    public Timestamp getStartTimePpp6() {
+    public LocalDateTime getStartTimePpp6() {
         return startTimePpp6;
     }
 
-    public void setStartTimePpp6(Timestamp startTimePpp6) {
+    public void setStartTimePpp6(LocalDateTime startTimePpp6) {
         this.startTimePpp6 = startTimePpp6;
     }
 
-    public Timestamp getStartTimePpp7() {
+    public LocalDateTime getStartTimePpp7() {
         return startTimePpp7;
     }
 
-    public void setStartTimePpp7(Timestamp startTimePpp7) {
+    public void setStartTimePpp7(LocalDateTime startTimePpp7) {
         this.startTimePpp7 = startTimePpp7;
     }
 
-    public Date getPlanDataStart1C() {
+    public LocalDate getPlanDataStart1C() {
         return planDataStart1C;
     }
 
-    public void setPlanDataStart1C(Date planDataStart1C) {
+    public void setPlanDataStart1C(LocalDate planDataStart1C) {
         this.planDataStart1C = planDataStart1C;
     }
 
-    public Date getForecastDataStart1C() {
+    public LocalDate getForecastDataStart1C() {
         return forecastDataStart1C;
     }
 
-    public void setForecastDataStart1C(Date forecastDataStart1C) {
+    public void setForecastDataStart1C(LocalDate forecastDataStart1C) {
         this.forecastDataStart1C = forecastDataStart1C;
     }
 
-    public Date getFactDataStart1C() {
+    public LocalDate getFactDataStart1C() {
         return factDataStart1C;
     }
 
-    public void setFactDataStart1C(Date factDataStart1C) {
+    public void setFactDataStart1C(LocalDate factDataStart1C) {
         this.factDataStart1C = factDataStart1C;
     }
 
-    public Timestamp getStopTimePpp1() {
+    public LocalDateTime getStopTimePpp1() {
         return stopTimePpp1;
     }
 
-    public void setStopTimePpp1(Timestamp stopTimePpp1) {
+    public void setStopTimePpp1(LocalDateTime stopTimePpp1) {
         this.stopTimePpp1 = stopTimePpp1;
     }
 
-    public Timestamp getStopTimePpp2() {
+    public LocalDateTime getStopTimePpp2() {
         return stopTimePpp2;
     }
 
-    public void setStopTimePpp2(Timestamp stopTimePpp2) {
+    public void setStopTimePpp2(LocalDateTime stopTimePpp2) {
         this.stopTimePpp2 = stopTimePpp2;
     }
 
-    public Timestamp getStopTimePpp3() {
+    public LocalDateTime getStopTimePpp3() {
         return stopTimePpp3;
     }
 
-    public void setStopTimePpp3(Timestamp stopTimePpp3) {
+    public void setStopTimePpp3(LocalDateTime stopTimePpp3) {
         this.stopTimePpp3 = stopTimePpp3;
     }
 
-    public Timestamp getStopTimePpp4() {
+    public LocalDateTime getStopTimePpp4() {
         return stopTimePpp4;
     }
 
-    public void setStopTimePpp4(Timestamp stopTimePpp4) {
+    public void setStopTimePpp4(LocalDateTime stopTimePpp4) {
         this.stopTimePpp4 = stopTimePpp4;
     }
 
-    public Timestamp getStopTimePpp5() {
+    public LocalDateTime getStopTimePpp5() {
         return stopTimePpp5;
     }
 
-    public void setStopTimePpp5(Timestamp stopTimePpp5) {
+    public void setStopTimePpp5(LocalDateTime stopTimePpp5) {
         this.stopTimePpp5 = stopTimePpp5;
     }
 
-    public Timestamp getStopTimePpp6() {
+    public LocalDateTime getStopTimePpp6() {
         return stopTimePpp6;
     }
 
-    public void setStopTimePpp6(Timestamp stopTimePpp6) {
+    public void setStopTimePpp6(LocalDateTime stopTimePpp6) {
         this.stopTimePpp6 = stopTimePpp6;
     }
 
-    public Timestamp getStopTimePpp7() {
+    public LocalDateTime getStopTimePpp7() {
         return stopTimePpp7;
     }
 
-    public void setStopTimePpp7(Timestamp stopTimePpp7) {
+    public void setStopTimePpp7(LocalDateTime stopTimePpp7) {
         this.stopTimePpp7 = stopTimePpp7;
     }
 
-    public Date getPlanDataStop1C() {
+    public LocalDate getPlanDataStop1C() {
         return planDataStop1C;
     }
 
-    public void setPlanDataStop1C(Date planDataStop1C) {
+    public void setPlanDataStop1C(LocalDate planDataStop1C) {
         this.planDataStop1C = planDataStop1C;
     }
 
-    public Date getForecastDataStop1C() {
+    public LocalDate getForecastDataStop1C() {
         return forecastDataStop1C;
     }
 
-    public void setForecastDataStop1C(Date forecastDataStop1C) {
+    public void setForecastDataStop1C(LocalDate forecastDataStop1C) {
         this.forecastDataStop1C = forecastDataStop1C;
     }
 
-    public Date getFactDataStop1C() {
+    public LocalDate getFactDataStop1C() {
         return factDataStop1C;
     }
 
-    public void setFactDataStop1C(Date factDataStop1C) {
+    public void setFactDataStop1C(LocalDate factDataStop1C) {
         this.factDataStop1C = factDataStop1C;
     }
 
-    public Date getPlanDataShipment1C() {
+    public LocalDate getPlanDataShipment1C() {
         return planDataShipment1C;
     }
 
-    public void setPlanDataShipment1C(Date planDataShipment1C) {
+    public void setPlanDataShipment1C(LocalDate planDataShipment1C) {
         this.planDataShipment1C = planDataShipment1C;
     }
 
-    public Date getForecastDataShipment1C() {
+    public LocalDate getForecastDataShipment1C() {
         return forecastDataShipment1C;
     }
 
-    public void setForecastDataShipment1C(Date forecastDataShipment1C) {
+    public void setForecastDataShipment1C(LocalDate forecastDataShipment1C) {
         this.forecastDataShipment1C = forecastDataShipment1C;
     }
 
-    public Date getFactDataShipment1C() {
+    public LocalDate getFactDataShipment1C() {
         return factDataShipment1C;
     }
 
-    public void setFactDataShipment1C(Date factDataShipment1C) {
+    public void setFactDataShipment1C(LocalDate factDataShipment1C) {
         this.factDataShipment1C = factDataShipment1C;
     }
 
@@ -461,6 +782,13 @@ public class Ppp {
                 ", optionNorm5=" + optionNorm5 +
                 ", optionNorm6=" + optionNorm6 +
                 ", optionNorm7=" + optionNorm7 +
+                ", operationNorm1=" + operationNorm1 +
+                ", operationNorm2=" + operationNorm2 +
+                ", operationNorm3=" + operationNorm3 +
+                ", operationNorm4=" + operationNorm4 +
+                ", operationNorm5=" + operationNorm5 +
+                ", operationNorm6=" + operationNorm6 +
+                ", operationNorm7=" + operationNorm7 +
                 ", problemTime1=" + problemTime1 +
                 ", problemTime2=" + problemTime2 +
                 ", problemTime3=" + problemTime3 +
