@@ -150,6 +150,39 @@ public class Ppp {
     @Column(name = "fact_data_shipment")
     private LocalDate factDataShipment1C;
 
+
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTimeSum;
+
+    public Long getOperationTimeSum() {
+        return operationTimeSum;
+    }
+
+    public void setOperationTimeSum(Long operationTimeSum) {
+        this.operationTimeSum = operationTimeSum;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long planPppVar;
+
+    public Long getPlanPppVar() {
+        return planPppVar;
+    }
+
+    public void setPlanPppVar(Long planPppVar) {
+        this.planPppVar = planPppVar;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long problemTimeSum;
+
+    public Long getProblemTimeSum() {
+        return problemTimeSum;
+    }
+
+    public void setProblemTimeSum(Long problemTimeSum) {
+        this.problemTimeSum = problemTimeSum;
+    }
+
+
     @Transient // Это поле не будет сохраняться в базе данных
     private LocalDate planDataStart1;
 
@@ -160,6 +193,7 @@ public class Ppp {
     public void setPlanDataStart1(LocalDate planDataStart1) {
         this.planDataStart1 = planDataStart1;
     }
+
 
     @Transient // Это поле не будет сохраняться в базе данных
     private LocalDate planDataStart2;

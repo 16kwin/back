@@ -23,9 +23,11 @@ public class PppService {
 
         for (Ppp ppp : pppList) {
 
-                if (ppp.getPlanPpp() != null) {
+            if (ppp.getPlanPpp() != null) {
                     ppp.setPlanPpp(ppp.getPlanPpp() * 24); // Умножаем на 24
                 }
+              
+
             if (ppp.getStartTimePpp1() != null && ppp.getStopTimePpp1() != null) {
                 LocalDateTime startTime = ppp.getStartTimePpp1();
                 LocalDateTime stopTime = ppp.getStopTimePpp1();
@@ -250,8 +252,43 @@ public class PppService {
             } else {
                 ppp.setForecastDataStart8(null);
             }
+            long sum = 0;
+            Long[] operationTimes = {
+                ppp.getOperationTime1(), ppp.getOperationTime2(), ppp.getOperationTime3(),
+                ppp.getOperationTime4(), ppp.getOperationTime5(), ppp.getOperationTime6(),
+                ppp.getOperationTime7()
+            };
+            
+            for (Long time : operationTimes) {
+                if (time != null) {
+                    sum += time;
+                }
+            }
+            ppp.setOperationTimeSum(sum);
+            long summ = 0;
+            Long[] problemTimes = {
+                ppp.getProblemTime1(), ppp.getProblemTime2(), ppp.getProblemTime3(),
+                ppp.getProblemTime4(), ppp.getProblemTime5(), ppp.getProblemTime6(),
+                ppp.getProblemTime7()
+            };
+            
+            for (Long time : problemTimes) {
+                if (time != null) {
+                    summ += time;
+                }
+            }
+            ppp.setProblemTimeSum(summ);
+            long procent = 0;
+            long operationTimeSum = ppp.getOperationTimeSum() != null ? ppp.getOperationTimeSum() : 0; // Защита от null
+            
+            if (operationTimeSum != 0) {
+                double procentDouble = ((double) ppp.getPlanPpp() / operationTimeSum) * 100; // Приведение к double
+                procent = (long) procentDouble; // Округляем, если нужно    
+            } else {
+                procent = 0;
+            }
+            ppp.setPlanPppVar(procent);
         }
-
         return pppList;
     }
 }
