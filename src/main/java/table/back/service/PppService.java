@@ -288,7 +288,276 @@ public class PppService {
                 procent = 0;
             }
             ppp.setPlanPppVar(procent);
+
+
+            if (ppp.getOperationNorm1() != null && ppp.getOptionNorm1() != null  && ppp.getOperationTime1() != null && ppp.getProblemTime1() != null) {
+
+                long var1 = ppp.getOperationNorm1();
+                long var2 = ppp.getOptionNorm1();
+                long var3 = ppp.getOperationTime1();
+                long var4 = ppp.getProblemTime1(); // Замени на фактическое значение
+            
+                // Вычисляем сумму первых двух
+                double sump1 = var1 + var2;
+            
+                // Вычисляем разность последних двух
+                double difference = var3 - var4;
+            
+                double percentage = 0;
+            
+                // Проверяем, чтобы разность не была равна 0
+                if (difference != 0) {
+                  // Вычисляем процент
+                  percentage = (sump1 / difference) * 100;
+                } else {
+                    // Обрабатываем случай деления на ноль (например, устанавливаем 0)
+                    percentage = 0; // Или любое другое значение по умолчанию
+                }
+                   //приводим к long
+                long percentageLong = (long)percentage;
+            
+                ppp.setClosingTime1(percentageLong);
+            
+            } else {
+                ppp.setClosingTime1(null);
+            }
+
+            if (ppp.getOperationNorm2() != null && ppp.getOptionNorm2() != null  && ppp.getOperationTime2() != null && ppp.getProblemTime2() != null) {
+
+                long var1 = ppp.getOperationNorm2();
+                long var2 = ppp.getOptionNorm2();
+                long var3 = ppp.getOperationTime2();
+                long var4 = ppp.getProblemTime2(); // Замени на фактическое значение
+            
+                // Вычисляем сумму первых двух
+                double sump1 = var1 + var2;
+            
+                // Вычисляем разность последних двух
+                double difference = var3 - var4;
+            
+                double percentage = 0;
+            
+                // Проверяем, чтобы разность не была равна 0
+                if (difference != 0) {
+                  // Вычисляем процент
+                  percentage = (sump1 / difference) * 100;
+                } else {
+                    // Обрабатываем случай деления на ноль (например, устанавливаем 0)
+                    percentage = 0; // Или любое другое значение по умолчанию
+                }
+                   //приводим к long
+                long percentageLong = (long)percentage;
+            
+                ppp.setClosingTime2(percentageLong);
+            
+            } else {
+                ppp.setClosingTime2(null);
+            }
+            if (ppp.getOperationNorm3() != null && ppp.getOptionNorm3() != null  && ppp.getOperationTime3() != null && ppp.getProblemTime3() != null) {
+
+                long var1 = ppp.getOperationNorm3();
+                long var2 = ppp.getOptionNorm3();
+                long var3 = ppp.getOperationTime3();
+                long var4 = ppp.getProblemTime3(); // Замени на фактическое значение
+            
+                // Вычисляем сумму первых двух
+                double sump1 = var1 + var2;
+            
+                // Вычисляем разность последних двух
+                double difference = var3 - var4;
+            
+                double percentage = 0;
+            
+                // Проверяем, чтобы разность не была равна 0
+                if (difference != 0) {
+                  // Вычисляем процент
+                  percentage = (sump1 / difference) * 100;
+                } else {
+                    // Обрабатываем случай деления на ноль (например, устанавливаем 0)
+                    percentage = 0; // Или любое другое значение по умолчанию
+                }
+                   //приводим к long
+                long percentageLong = (long)percentage;
+            
+                ppp.setClosingTime3(percentageLong);
+            
+            } else {
+                ppp.setClosingTime3(null);
+            }
+            if (ppp.getOperationNorm4() != null && ppp.getOptionNorm4() != null  && ppp.getOperationTime4() != null && ppp.getProblemTime4() != null) {
+
+                long var1 = ppp.getOperationNorm4();
+                long var2 = ppp.getOptionNorm4();
+                long var3 = ppp.getOperationTime4();
+                long var4 = ppp.getProblemTime4(); // Замени на фактическое значение
+            
+                // Вычисляем сумму первых двух
+                double sump1 = var1 + var2;
+            
+                // Вычисляем разность последних двух
+                double difference = var3 - var4;
+            
+                double percentage = 0;
+            
+                // Проверяем, чтобы разность не была равна 0
+                if (difference != 0) {
+                  // Вычисляем процент
+                  percentage = (sump1 / difference) * 100;
+                } else {
+                    // Обрабатываем случай деления на ноль (например, устанавливаем 0)
+                    percentage = 0; // Или любое другое значение по умолчанию
+                }
+                   //приводим к long
+                long percentageLong = (long)percentage;
+            
+                ppp.setClosingTime4(percentageLong);
+            
+            } else {
+                ppp.setClosingTime4(null);
+            }
+            if (ppp.getOperationNorm5() != null && ppp.getOptionNorm5() != null  && ppp.getOperationTime5() != null && ppp.getProblemTime5() != null) {
+
+                long var1 = ppp.getOperationNorm5();
+                long var2 = ppp.getOptionNorm5();
+                long var3 = ppp.getOperationTime5();
+                long var4 = ppp.getProblemTime5(); // Замени на фактическое значение
+            
+                // Вычисляем сумму первых двух
+                double sump1 = var1 + var2;
+            
+                // Вычисляем разность последних двух
+                double difference = var3 - var4;
+            
+                double percentage = 0;
+            
+                // Проверяем, чтобы разность не была равна 0
+                if (difference != 0) {
+                  // Вычисляем процент
+                  percentage = (sump1 / difference) * 100;
+                } else {
+                    // Обрабатываем случай деления на ноль (например, устанавливаем 0)
+                    percentage = 0; // Или любое другое значение по умолчанию
+                }
+                   //приводим к long
+                long percentageLong = (long)percentage;
+            
+                ppp.setClosingTime5(percentageLong);
+            
+            } else {
+                ppp.setClosingTime5(null);
+            }
+            if (ppp.getOperationNorm6() != null && ppp.getOptionNorm6() != null  && ppp.getOperationTime6() != null && ppp.getProblemTime6() != null) {
+
+                long var1 = ppp.getOperationNorm6();
+                long var2 = ppp.getOptionNorm6();
+                long var3 = ppp.getOperationTime6();
+                long var4 = ppp.getProblemTime6(); // Замени на фактическое значение
+            
+                // Вычисляем сумму первых двух
+                double sump1 = var1 + var2;
+            
+                // Вычисляем разность последних двух
+                double difference = var3 - var4;
+            
+                double percentage = 0;
+            
+                // Проверяем, чтобы разность не была равна 0
+                if (difference != 0) {
+                  // Вычисляем процент
+                  percentage = (sump1 / difference) * 100;
+                } else {
+                    // Обрабатываем случай деления на ноль (например, устанавливаем 0)
+                    percentage = 0; // Или любое другое значение по умолчанию
+                }
+                   //приводим к long
+                long percentageLong = (long)percentage;
+            
+                ppp.setClosingTime6(percentageLong);
+            
+            } else {
+                ppp.setClosingTime6(null);
+            }
+            if (ppp.getOperationNorm7() != null && ppp.getOptionNorm7() != null  && ppp.getOperationTime7() != null && ppp.getProblemTime7() != null) {
+
+                long var1 = ppp.getOperationNorm7();
+                long var2 = ppp.getOptionNorm7();
+                long var3 = ppp.getOperationTime7();
+                long var4 = ppp.getProblemTime7(); // Замени на фактическое значение
+            
+                // Вычисляем сумму первых двух
+                double sump1 = var1 + var2;
+            
+                // Вычисляем разность последних двух
+                double difference = var3 - var4;
+            
+                double percentage = 0;
+            
+                // Проверяем, чтобы разность не была равна 0
+                if (difference != 0) {
+                  // Вычисляем процент
+                  percentage = (sump1 / difference) * 100;
+                } else {
+                    // Обрабатываем случай деления на ноль (например, устанавливаем 0)
+                    percentage = 0; // Или любое другое значение по умолчанию
+                }
+                   //приводим к long
+                long percentageLong = (long)percentage;
+            
+                ppp.setClosingTime7(percentageLong);
+            
+            } else {
+                ppp.setClosingTime7(null);
+            }
+            if (ppp.getClosingTime1() != null && ppp.getClosingTime2() != null && ppp.getClosingTime3() != null && ppp.getClosingTime4() != null && ppp.getClosingTime5() != null && ppp.getClosingTime6() != null && ppp.getClosingTime7() != null) {
+
+                double sumpp = 0;
+                int count = 0; // Счетчик не-null значений
+            
+                if (ppp.getClosingTime1() != null) {
+                    sumpp += ppp.getClosingTime1();
+                    count++;
+                }
+                if (ppp.getClosingTime2() != null) {
+                    sumpp += ppp.getClosingTime2();
+                    count++;
+                }
+                if (ppp.getClosingTime3() != null) {
+                    sumpp  += ppp.getClosingTime3();
+                    count++;
+                }
+                if (ppp.getClosingTime4() != null) {
+                    sumpp += ppp.getClosingTime4();
+                    count++;
+                }
+                if (ppp.getClosingTime5() != null) {
+                    sumpp += ppp.getClosingTime5();
+                    count++;
+                }
+                if (ppp.getClosingTime6() != null) {
+                    sumpp += ppp.getClosingTime6();
+                    count++;
+                }
+                if (ppp.getClosingTime7() != null) {
+                    sumpp += ppp.getClosingTime7();
+                    count++;
+                }
+            
+                double average = 0;
+            
+                if (count > 0) {
+                    average = sumpp / count;
+                }
+            
+            
+                long averageLong = (long) average; // Приводим double к long
+
+                ppp.setClosingTimeAvg(averageLong); //  Сохраняем среднее значение
+            
+            } else {
+                ppp.setClosingTimeAvg(null);
+            }
         }
+        
         return pppList;
     }
 }

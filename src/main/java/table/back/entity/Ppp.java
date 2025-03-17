@@ -152,14 +152,84 @@ public class Ppp {
 
 
     @Transient // Это поле не будет сохраняться в базе данных
-    private Long operationTimeSum;
+    private Long closingTime1;
 
-    public Long getOperationTimeSum() {
-        return operationTimeSum;
+    public Long getClosingTime1() {
+        return closingTime1;
     }
 
-    public void setOperationTimeSum(Long operationTimeSum) {
-        this.operationTimeSum = operationTimeSum;
+    public void setClosingTime1(Long closingTime1) {
+        this.closingTime1 = closingTime1;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long closingTime2;
+
+    public Long getClosingTime2() {
+        return closingTime2;
+    }
+
+    public void setClosingTime2(Long closingTime2) {
+        this.closingTime2 = closingTime2;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long closingTime3;
+
+    public Long getClosingTime3() {
+        return closingTime3;
+    }
+
+    public void setClosingTime3(Long closingTime3) {
+        this.closingTime3 = closingTime3;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long closingTime4;
+
+    public Long getClosingTime4() {
+        return closingTime4;
+    }
+
+    public void setClosingTime4(Long closingTime4) {
+        this.closingTime4 = closingTime4;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long closingTime5;
+
+    public Long getClosingTime5() {
+        return closingTime5;
+    }
+
+    public void setClosingTime5(Long closingTime5) {
+        this.closingTime5 = closingTime5;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long closingTime6;
+
+    public Long getClosingTime6() {
+        return closingTime6;
+    }
+
+    public void setClosingTime6(Long closingTime6) {
+        this.closingTime6 = closingTime6;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long closingTime7;
+
+    public Long getClosingTime7() {
+        return closingTime7;
+    }
+
+    public void setClosingTime7(Long closingTime7) {
+        this.closingTime7 = closingTime7;
+    }
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long closingTimeAvg;
+
+    public Long getClosingTimeAvg() {
+        return closingTimeAvg;
+    }
+
+    public void setClosingTimeAvg(Long closingTimeAvg) {
+        this.closingTimeAvg = closingTimeAvg;
     }
     @Transient // Это поле не будет сохраняться в базе данных
     private Long planPppVar;
@@ -425,7 +495,15 @@ public class Ppp {
 
 
 
+    @Transient // Это поле не будет сохраняться в базе данных
+    private Long operationTimeSum;
 
+    public Long getOperationTimeSum() {
+        return operationTimeSum;
+    }
+
+    public void setOperationTimeSum(Long operationTimeSum) {
+        this.operationTimeSum = operationTimeSum;}
 
 
 
