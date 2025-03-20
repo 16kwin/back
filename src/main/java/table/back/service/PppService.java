@@ -9,6 +9,7 @@ import table.back.repository.PppRepository;
 import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.Duration;
 
 
@@ -24,73 +25,238 @@ public class PppService {
         for (Ppp ppp : pppList) {
 
             if (ppp.getPlanPpp() != null) {
-                    ppp.setPlanPpp(ppp.getPlanPpp() * 24); // Умножаем на 24
+                    ppp.setPlanPpp(ppp.getPlanPpp() * 8); // Умножаем на 24
                 }
               
 
-            if (ppp.getStartTimePpp1() != null && ppp.getStopTimePpp1() != null) {
-                LocalDateTime startTime = ppp.getStartTimePpp1();
-                LocalDateTime stopTime = ppp.getStopTimePpp1();
-                Duration duration = Duration.between(startTime, stopTime);
-                long hours = duration.toHours();
-                ppp.setOperationTime1(hours); // Устанавливаем значение в entity
-            } else {
-                ppp.setOperationTime1(null); // Или какое-то значение по умолчанию
+          
+          
+          
+    if (ppp.getStartTimePpp1() != null && ppp.getStopTimePpp1() != null) {
+    LocalDateTime startTime = ppp.getStartTimePpp1();
+    LocalDateTime stopTime = ppp.getStopTimePpp1();
+
+    long totalHours = 0;
+
+    // 1. Определяем границы рабочих дней
+    LocalDate startDate = startTime.toLocalDate();
+    LocalDate endDate = stopTime.toLocalDate();
+
+    // 2. Проходим по каждому дню в диапазоне
+    for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+        LocalDateTime startOfDay = date.atStartOfDay();
+        LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+
+        // 3. Определяем фактическое начало и конец работы в текущий день
+        LocalDateTime actualStart = (date.equals(startDate)) ? startTime : startOfDay;
+        LocalDateTime actualEnd = (date.equals(endDate)) ? stopTime : endOfDay;
+
+        // 4. Вычисляем длительность работы в этот день
+        if (actualStart.isBefore(actualEnd)) { // проверка, чтобы не было отрицательного Duration
+            Duration duration = Duration.between(actualStart, actualEnd);
+            long hoursInDay = Math.min(duration.toHours(), 8); // Ограничиваем 8 часами
+            totalHours += hoursInDay;
+        }
+    }
+
+    ppp.setOperationTime1(totalHours);
+} else {
+    ppp.setOperationTime1(null);
+}
+
+if (ppp.getStartTimePpp2() != null && ppp.getStopTimePpp2() != null) {
+    LocalDateTime startTime = ppp.getStartTimePpp2();
+    LocalDateTime stopTime = ppp.getStopTimePpp2();
+
+    long totalHours = 0;
+
+    // 2. Определяем границы рабочих дней
+    LocalDate startDate = startTime.toLocalDate();
+    LocalDate endDate = stopTime.toLocalDate();
+
+    // 2. Проходим по каждому дню в диапазоне
+    for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+        LocalDateTime startOfDay = date.atStartOfDay();
+        LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+
+        // 3. Определяем фактическое начало и конец работы в текущий день
+        LocalDateTime actualStart = (date.equals(startDate)) ? startTime : startOfDay;
+        LocalDateTime actualEnd = (date.equals(endDate)) ? stopTime : endOfDay;
+
+        // 4. Вычисляем длительность работы в этот день
+        if (actualStart.isBefore(actualEnd)) { // проверка, чтобы не было отрицательного Duration
+            Duration duration = Duration.between(actualStart, actualEnd);
+            long hoursInDay = Math.min(duration.toHours(), 8); // Ограничиваем 8 часами
+            totalHours += hoursInDay;
+        }
+    }
+
+    ppp.setOperationTime2(totalHours);
+} else {
+    ppp.setOperationTime2(null);
+}
+if (ppp.getStartTimePpp3() != null && ppp.getStopTimePpp3() != null) {
+    LocalDateTime startTime = ppp.getStartTimePpp3();
+    LocalDateTime stopTime = ppp.getStopTimePpp3();
+
+    long totalHours = 0;
+
+    // 3. Определяем границы рабочих дней
+    LocalDate startDate = startTime.toLocalDate();
+    LocalDate endDate = stopTime.toLocalDate();
+
+    // 3. Проходим по каждому дню в диапазоне
+    for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+        LocalDateTime startOfDay = date.atStartOfDay();
+        LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+
+        // 3. Определяем фактическое начало и конец работы в текущий день
+        LocalDateTime actualStart = (date.equals(startDate)) ? startTime : startOfDay;
+        LocalDateTime actualEnd = (date.equals(endDate)) ? stopTime : endOfDay;
+
+        // 4. Вычисляем длительность работы в этот день
+        if (actualStart.isBefore(actualEnd)) { // проверка, чтобы не было отрицательного Duration
+            Duration duration = Duration.between(actualStart, actualEnd);
+            long hoursInDay = Math.min(duration.toHours(), 8); // Ограничиваем 8 часами
+            totalHours += hoursInDay;
+        }
+    }
+
+    ppp.setOperationTime3(totalHours);
+} else {
+    ppp.setOperationTime3(null);
+}
+
+if (ppp.getStartTimePpp4() != null && ppp.getStopTimePpp4() != null) {
+    LocalDateTime startTime = ppp.getStartTimePpp4();
+    LocalDateTime stopTime = ppp.getStopTimePpp4();
+
+    long totalHours = 0;
+
+    // 4. Определяем границы рабочих дней
+    LocalDate startDate = startTime.toLocalDate();
+    LocalDate endDate = stopTime.toLocalDate();
+
+    // 4. Проходим по каждому дню в диапазоне
+    for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+        LocalDateTime startOfDay = date.atStartOfDay();
+        LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+
+        // 3. Определяем фактическое начало и конец работы в текущий день
+        LocalDateTime actualStart = (date.equals(startDate)) ? startTime : startOfDay;
+        LocalDateTime actualEnd = (date.equals(endDate)) ? stopTime : endOfDay;
+
+        // 4. Вычисляем длительность работы в этот день
+        if (actualStart.isBefore(actualEnd)) { // проверка, чтобы не было отрицательного Duration
+            Duration duration = Duration.between(actualStart, actualEnd);
+            long hoursInDay = Math.min(duration.toHours(), 8); // Ограничиваем 8 часами
+            totalHours += hoursInDay;
+        }
+    }
+
+    ppp.setOperationTime4(totalHours);
+} else {
+    ppp.setOperationTime4(null);
+}
+
+           
+if (ppp.getStartTimePpp5() != null && ppp.getStopTimePpp5() != null) {
+    LocalDateTime startTime = ppp.getStartTimePpp5();
+    LocalDateTime stopTime = ppp.getStopTimePpp5();
+
+    long totalHours = 0;
+
+    // 5. Определяем границы рабочих дней
+    LocalDate startDate = startTime.toLocalDate();
+    LocalDate endDate = stopTime.toLocalDate();
+
+    // 5. Проходим по каждому дню в диапазоне
+    for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+        LocalDateTime startOfDay = date.atStartOfDay();
+        LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+
+        // 3. Определяем фактическое начало и конец работы в текущий день
+        LocalDateTime actualStart = (date.equals(startDate)) ? startTime : startOfDay;
+        LocalDateTime actualEnd = (date.equals(endDate)) ? stopTime : endOfDay;
+
+        // 4. Вычисляем длительность работы в этот день
+        if (actualStart.isBefore(actualEnd)) { // проверка, чтобы не было отрицательного Duration
+            Duration duration = Duration.between(actualStart, actualEnd);
+            long hoursInDay = Math.min(duration.toHours(), 8); // Ограничиваем 8 часами
+            totalHours += hoursInDay;
+        }
+    }
+
+    ppp.setOperationTime5(totalHours);
+} else {
+    ppp.setOperationTime5(null);
+}
+    
+    if (ppp.getStartTimePpp6() != null && ppp.getStopTimePpp6() != null) {
+        LocalDateTime startTime = ppp.getStartTimePpp6();
+        LocalDateTime stopTime = ppp.getStopTimePpp6();
+    
+        long totalHours = 0;
+    
+        // 6. Определяем границы рабочих дней
+        LocalDate startDate = startTime.toLocalDate();
+        LocalDate endDate = stopTime.toLocalDate();
+    
+        // 6. Проходим по каждому дню в диапазоне
+        for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+            LocalDateTime startOfDay = date.atStartOfDay();
+            LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+    
+            // 3. Определяем фактическое начало и конец работы в текущий день
+            LocalDateTime actualStart = (date.equals(startDate)) ? startTime : startOfDay;
+            LocalDateTime actualEnd = (date.equals(endDate)) ? stopTime : endOfDay;
+    
+            // 4. Вычисляем длительность работы в этот день
+            if (actualStart.isBefore(actualEnd)) { // проверка, чтобы не было отрицательного Duration
+                Duration duration = Duration.between(actualStart, actualEnd);
+                long hoursInDay = Math.min(duration.toHours(), 8); // Ограничиваем 8 часами
+                totalHours += hoursInDay;
             }
-            if (ppp.getStartTimePpp2() != null && ppp.getStopTimePpp2() != null) {
-                LocalDateTime startTime = ppp.getStartTimePpp2();
-                LocalDateTime stopTime = ppp.getStopTimePpp2();
-                Duration duration = Duration.between(startTime, stopTime);
-                long hours = duration.toHours();
-                ppp.setOperationTime2(hours); // Устанавливаем значение в entity
-            } else {
-                ppp.setOperationTime2(null); // Или какое-то значение по умолчанию
+        }
+    
+        ppp.setOperationTime6(totalHours);
+    } else {
+        ppp.setOperationTime6(null);
+
+    }
+        if (ppp.getStartTimePpp7() != null && ppp.getStopTimePpp7() != null) {
+            LocalDateTime startTime = ppp.getStartTimePpp7();
+            LocalDateTime stopTime = ppp.getStopTimePpp7();
+        
+            long totalHours = 0;
+        
+            // 7. Определяем границы рабочих дней
+            LocalDate startDate = startTime.toLocalDate();
+            LocalDate endDate = stopTime.toLocalDate();
+        
+            // 7. Проходим по каждому дню в диапазоне
+            for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+                LocalDateTime startOfDay = date.atStartOfDay();
+                LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+        
+                // 3. Определяем фактическое начало и конец работы в текущий день
+                LocalDateTime actualStart = (date.equals(startDate)) ? startTime : startOfDay;
+                LocalDateTime actualEnd = (date.equals(endDate)) ? stopTime : endOfDay;
+        
+                // 4. Вычисляем длительность работы в этот день
+                if (actualStart.isBefore(actualEnd)) { // проверка, чтобы не было отрицательного Duration
+                    Duration duration = Duration.between(actualStart, actualEnd);
+                    long hoursInDay = Math.min(duration.toHours(), 8); // Ограничиваем 8 часами
+                    totalHours += hoursInDay;
+                }
             }
-            if (ppp.getStartTimePpp3() != null && ppp.getStopTimePpp3() != null) {
-                LocalDateTime startTime = ppp.getStartTimePpp3();
-                LocalDateTime stopTime = ppp.getStopTimePpp3();
-                Duration duration = Duration.between(startTime, stopTime);
-                long hours = duration.toHours();
-                ppp.setOperationTime3(hours); // Устанавливаем значение в entity
-            } else {
-                ppp.setOperationTime3(null); // Или какое-то значение по умолчанию
-            }
-            if (ppp.getStartTimePpp4() != null && ppp.getStopTimePpp4() != null) {
-                LocalDateTime startTime = ppp.getStartTimePpp4();
-                LocalDateTime stopTime = ppp.getStopTimePpp4();
-                Duration duration = Duration.between(startTime, stopTime);
-                long hours = duration.toHours();
-                ppp.setOperationTime4(hours); // Устанавливаем значение в entity
-            } else {
-                ppp.setOperationTime4(null); // Или какое-то значение по умолчанию
-            }
-            if (ppp.getStartTimePpp5() != null && ppp.getStopTimePpp5() != null) {
-                LocalDateTime startTime = ppp.getStartTimePpp5();
-                LocalDateTime stopTime = ppp.getStopTimePpp5();
-                Duration duration = Duration.between(startTime, stopTime);
-                long hours = duration.toHours();
-                ppp.setOperationTime5(hours); // Устанавливаем значение в entity
-            } else {
-                ppp.setOperationTime5(null); // Или какое-то значение по умолчанию
-            }
-            if (ppp.getStartTimePpp6() != null && ppp.getStopTimePpp6() != null) {
-                LocalDateTime startTime = ppp.getStartTimePpp6();
-                LocalDateTime stopTime = ppp.getStopTimePpp6();
-                Duration duration = Duration.between(startTime, stopTime);
-                long hours = duration.toHours();
-                ppp.setOperationTime6(hours); // Устанавливаем значение в entity
-            } else {
-                ppp.setOperationTime6(null); // Или какое-то значение по умолчанию
-            }
-            if (ppp.getStartTimePpp7() != null && ppp.getStopTimePpp7() != null) {
-                LocalDateTime startTime = ppp.getStartTimePpp7();
-                LocalDateTime stopTime = ppp.getStopTimePpp7();
-                Duration duration = Duration.between(startTime, stopTime);
-                long hours = duration.toHours();
-                ppp.setOperationTime7(hours); // Устанавливаем значение в entity
-            } else {
-                ppp.setOperationTime7(null); // Или какое-то значение по умолчанию
-            }
+        
+            ppp.setOperationTime7(totalHours);
+        } else {
+            ppp.setOperationTime7(null);
+        }
+
+
 
 
             if (ppp.getPlanDataStart1C() != null && ppp.getOperationNorm1() != null && ppp.getOptionNorm1() != null) {
